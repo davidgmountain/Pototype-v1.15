@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My profile — Global Scouting Network</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/members.css">
+</head>
+<body class="gsn-signed-out">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="Global Scouting Network — Future is Female home">
+      <img src="../img/gsn-letters.png" alt="GSN" class="brand-letters">
+      <img src="../img/gsn-football.png" alt="" class="brand-football" aria-hidden="true">
+      <span class="brand-fif-stack" aria-hidden="true">
+        <span class="bf-line">Future is</span>
+        <span class="bf-line">Female</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a href="../index.html">Home</a>
+      <a href="../community.html">Community</a>
+      <a href="../team.html">Team</a>
+      <a href="../news.html">News</a>
+      <a href="../contact.html">Contact</a>
+      <a href="index.html" class="active">Members</a>
+      <a href="../signup.html" class="cta">Sign up</a>
+    </nav>
+  </div>
+</header>
+
+<div class="members-strip" data-gsn-require="member">
+  <div class="container">
+    <div class="who">Signed in as <strong id="gsn-who">…</strong> <span id="gsn-tier-badge" class="tier-badge free">FREE</span></div>
+    <div class="links">
+      <a href="index.html">Directory</a>
+      <a href="me.html" class="active">My profile</a>
+      <a href="messages.html" data-gsn-require="premium">Messages</a>
+      <a href="upgrade.html">Upgrade</a>
+      <a href="admin.html" data-gsn-require="admin">Admin</a>
+      <a href="#" class="signout js-signout">Sign out</a>
+    </div>
+  </div>
+</div>
+
+<section class="s" data-gsn-require="signed-out">
+  <div class="container">
+    <div class="gate-card">
+      <h1>Sign in to edit your profile</h1>
+      <button class="js-signin" type="button">Sign in to GSN</button>
+    </div>
+  </div>
+</section>
+
+<section class="s" data-gsn-require="member">
+  <div class="container">
+    <h1>My profile</h1>
+    <p class="lede">This is what other members see in the directory.</p>
+
+    <form class="profile-form" id="me-form" autocomplete="off">
+      <div>
+        <label for="me-name">Display name</label>
+        <input type="text" id="me-name" required>
+      </div>
+      <div>
+        <label for="me-country">Country</label>
+        <input type="text" id="me-country" placeholder="e.g. Italy">
+      </div>
+      <div>
+        <label for="me-role-title">Role / job title</label>
+        <input type="text" id="me-role-title" placeholder="e.g. Head of Scouting">
+      </div>
+      <div>
+        <label for="me-club">Club or organisation</label>
+        <input type="text" id="me-club" placeholder="e.g. Juventus Women">
+      </div>
+      <div>
+        <label for="me-expertise">Expertise (comma-separated tags)</label>
+        <input type="text" id="me-expertise" placeholder="scouting, analytics, youth development">
+      </div>
+      <div>
+        <label for="me-bio">Short bio</label>
+        <textarea id="me-bio" placeholder="A couple of sentences about your work."></textarea>
+      </div>
+      <div>
+        <label for="me-photo">Profile photo URL (optional)</label>
+        <input type="url" id="me-photo" placeholder="https://…">
+        <small style="color:#777;font-size:12px;">Paste a public image URL. (We'll add direct upload to Supabase Storage soon.)</small>
+      </div>
+      <div class="actions">
+        <button type="submit">Save profile</button>
+        <span class="save-status" id="me-status"></span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom"><span>&copy; 2026 Global Scouting Network. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/me.js"></script>
+</body>
+</html>

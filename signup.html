@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign up — Global Scouting Network</title>
+  <meta name="description" content="Apply to join the Global Scouting Network and Future is Female community.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Global Scouting Network — Future is Female home">
+      <img src="img/gsn-letters.png" alt="GSN" class="brand-letters">
+      <img src="img/gsn-football.png" alt="" class="brand-football" aria-hidden="true">
+      <span class="brand-fif-stack" aria-hidden="true">
+        <span class="bf-line">Future is</span>
+        <span class="bf-line">Female</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a href="index.html">Home</a>
+      <a href="community.html">Community</a>
+      <a href="team.html">Team</a>
+      <a href="news.html">News</a>
+      <a href="contact.html">Contact</a>
+      <a href="members/">Members</a>
+      <a href="signup.html" class="cta active">Sign up</a>
+    </nav>
+  </div>
+</header>
+<section class="page-head">
+  <div class="container">
+    <h1>Sign up &mdash; free</h1>
+    <p class="lede">Join the Global Scouting Network and our Future is Female community. Membership is free for football professionals. Your details are stored securely in line with our Data Storage &amp; Usage Policy (GDPR).</p>
+  </div>
+</section>
+
+<section class="s signup-section">
+  <div class="container">
+    <div id="localFileWarning" style="display:none; background:#fff8e1; border:1px solid #f3d77b; color:#7a5a14; padding:12px 16px; border-radius:10px; margin-bottom:20px; font-size:14px;">
+      <strong>Heads up:</strong> this form posts to a third-party email service that requires the page to be served over <code>https://</code>. If you&rsquo;re viewing this file directly from your computer (a <code>file://</code> URL), submission will fail. <strong>Open the deployed Vercel / Netlify URL instead</strong> and the form will send normally.
+    </div>
+
+    <nav class="step-nav" aria-label="Sign-up progress"><a href="#sec-you" class="step"><span class="step-num">1</span><span class="step-label">Your details</span></a><a href="#sec-where" class="step"><span class="step-num">2</span><span class="step-label">Location</span></a><a href="#sec-role" class="step"><span class="step-num">3</span><span class="step-label">Your role</span></a><a href="#sec-fn" class="step"><span class="step-num">4</span><span class="step-label">Functions</span></a><a href="#sec-qual" class="step"><span class="step-num">5</span><span class="step-label">Qualifications</span></a><a href="#sec-gsn" class="step"><span class="step-num">6</span><span class="step-label">About GSN</span></a><a href="#sec-consent" class="step"><span class="step-num">7</span><span class="step-label">Consent</span></a></nav>
+
+    <form class="signup-form form-grid" action="https://formsubmit.co/david@hirsch.org.uk" method="POST">
+      <input type="hidden" name="_subject" value="GSN — New sign-up application">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_next" value="https://globalscoutingnetwork.net/signup.html?sent=1">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <fieldset class="fs" id="sec-you">
+        <legend><span class="legend-num">1</span> Your details</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sFirst">First name <span class="req">*</span></label>
+            <input type="text" id="sFirst" name="firstName" required autocomplete="given-name">
+          </div>
+          <div class="form-group">
+            <label for="sLast">Family name / surname <span class="req">*</span></label>
+            <input type="text" id="sLast" name="lastName" required autocomplete="family-name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sEmail">Email address <span class="req">*</span></label>
+            <input type="email" id="sEmail" name="email" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="sPhone">Mobile / phone number <span class="opt">optional</span></label>
+            <input type="tel" id="sPhone" name="phone" autocomplete="tel" placeholder="+44 …">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sGender">Gender <span class="opt">optional</span></label>
+            <select id="sGender" name="gender">
+              <option value="">Prefer not to say</option>
+              <option>Female</option><option>Male</option><option>Non-binary</option>
+              <option>Self-describe — see notes</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sNationality">Nationality <span class="opt">optional</span></label>
+            <input type="text" id="sNationality" name="nationality" placeholder="e.g. British, Brazilian, Dual British/Irish">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="fs" id="sec-where">
+        <legend><span class="legend-num">2</span> Where you&rsquo;re based</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sConfederation">FIFA Confederation <span class="req">*</span></label>
+            <select id="sConfederation" name="confederation" required>
+              <option value="">Select…</option>
+              <option>UEFA (Europe)</option><option>CONMEBOL (South America)</option><option>CONCACAF (North & Central America)</option><option>AFC (Asia)</option><option>CAF (Africa)</option><option>OFC (Oceania)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sCountry">Country <span class="req">*</span></label>
+            <input type="text" id="sCountry" name="country" required placeholder="e.g. England, Netherlands, USA">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sCity">Region / city <span class="opt">optional</span></label>
+            <input type="text" id="sCity" name="city" placeholder="e.g. London, Bay Area, Lombardy">
+          </div>
+          <div class="form-group">
+            <label for="sFA">Your National FA <span class="opt">optional</span></label>
+            <input type="text" id="sFA" name="fa" placeholder="e.g. The FA, KNVB, RFEF, USSF">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="fs" id="sec-role">
+        <legend><span class="legend-num">3</span> Your role in football</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sEmpStatus">Employment status <span class="req">*</span></label>
+            <select id="sEmpStatus" name="employmentStatus" required>
+              <option value="">Select…</option>
+              <option>Full-time paid</option><option>Part-time paid</option><option>Volunteer</option><option>Self-employed / consultant</option><option>Unpaid / work-experience</option><option>Not currently working in football</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sJobTitle">Job title <span class="opt">optional</span></label>
+            <input type="text" id="sJobTitle" name="jobTitle" placeholder="e.g. Head of Academy Scouting">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sYears">Years working in football <span class="opt">optional</span></label>
+            <input type="number" id="sYears" name="years" min="0" max="60" step="1" placeholder="e.g. 7">
+          </div>
+          <div class="form-group">
+            <label for="sFocus">You work in <span class="req">*</span></label>
+            <select id="sFocus" name="focus" required>
+              <option value="">Select…</option>
+              <option>Women&rsquo;s football</option>
+              <option>Men&rsquo;s football</option>
+              <option>Men&rsquo;s &amp; Women&rsquo;s</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="group-label">Which of these apply to you? <span class="opt">tick all that apply</span></label>
+          <div class="check-grid">
+            <label class="check-item"><input type="checkbox" name="isManager" value="Yes"><span>I lead or manage people</span></label>
+            <label class="check-item"><input type="checkbox" name="directlyEmployed" value="Yes" data-toggle="employerExtra"><span>I&rsquo;m directly employed by a club or football body</span></label>
+            <label class="check-item"><input type="checkbox" name="isStudent" value="Yes" data-toggle="studentExtra"><span>I&rsquo;m currently a university student</span></label>
+          </div>
+          <div id="employerExtra" class="hidden-extra">
+            <label for="sEmployer">Who is your football employer?</label>
+            <input type="text" id="sEmployer" name="employer" placeholder="e.g. Chelsea FC, KNVB, Gotham FC">
+          </div>
+          <div id="studentExtra" class="hidden-extra">
+            <label for="sUni">University, course and completion date</label>
+            <input type="text" id="sUni" name="university" placeholder="e.g. Loughborough, Sports Management, Jun 2026">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="group-label">Age ranges you work with <span class="opt">tick all that apply</span></label>
+          <div class="check-grid pills"><label class="check-item"><input type="checkbox" name="ageGroups" value="Pre-academy (U8–)"><span>Pre-academy (U8–)</span></label><label class="check-item"><input type="checkbox" name="ageGroups" value="U9–U12"><span>U9–U12</span></label><label class="check-item"><input type="checkbox" name="ageGroups" value="U13–U16"><span>U13–U16</span></label><label class="check-item"><input type="checkbox" name="ageGroups" value="U17–U21"><span>U17–U21</span></label><label class="check-item"><input type="checkbox" name="ageGroups" value="Senior / First team"><span>Senior / First team</span></label></div>
+        </div>
+      </fieldset>
+
+      <fieldset class="fs" id="sec-fn">
+        <legend><span class="legend-num">4</span> Functions</legend>
+        <div class="form-group">
+          <label class="group-label">Which functions does your role include? <span class="opt">tick all that apply</span></label>
+          <div class="check-grid">
+            <label class="check-item"><input type="checkbox" name="doesScouting" value="Yes" data-toggle="scoutingExtra"><span><strong>Scouting</strong></span></label>
+            <label class="check-item"><input type="checkbox" name="doesAnalysis" value="Yes" data-toggle="analysisExtra"><span><strong>Analysis</strong></span></label>
+            <label class="check-item"><input type="checkbox" name="doesCoaching" value="Yes" data-toggle="coachingExtra"><span><strong>Coaching</strong></span></label>
+            <label class="check-item"><input type="checkbox" name="doesEducation" value="Yes"><span><strong>Education</strong></span></label>
+          </div>
+        </div>
+
+        <div id="scoutingExtra" class="hidden-extra">
+          <label class="group-label">Scouting roles <span class="opt">tick all that apply</span></label>
+          <div class="check-grid "><label class="check-item"><input type="checkbox" name="scoutingRoles" value="Head / Director of Scouting"><span>Head / Director of Scouting</span></label><label class="check-item"><input type="checkbox" name="scoutingRoles" value="Chief / Head Scout"><span>Chief / Head Scout</span></label><label class="check-item"><input type="checkbox" name="scoutingRoles" value="Scouting Coordinator"><span>Scouting Coordinator</span></label><label class="check-item"><input type="checkbox" name="scoutingRoles" value="1st Team Scout"><span>1st Team Scout</span></label><label class="check-item"><input type="checkbox" name="scoutingRoles" value="Academy Scout"><span>Academy Scout</span></label><label class="check-item"><input type="checkbox" name="scoutingRoles" value="Pre-academy Scout"><span>Pre-academy Scout</span></label><label class="check-item"><input type="checkbox" name="scoutingRoles" value="Youth Scout"><span>Youth Scout</span></label><label class="check-item"><input type="checkbox" name="scoutingRoles" value="International Scout"><span>International Scout</span></label><label class="check-item"><input type="checkbox" name="scoutingRoles" value="Opposition Scout"><span>Opposition Scout</span></label><label class="check-item"><input type="checkbox" name="scoutingRoles" value="Video Scout"><span>Video Scout</span></label><label class="check-item"><input type="checkbox" name="scoutingRoles" value="Data Scout"><span>Data Scout</span></label><label class="check-item"><input type="checkbox" name="scoutingRoles" value="Recruitment Analyst"><span>Recruitment Analyst</span></label></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sClubsNow">Club(s) you scout for currently <span class="opt">optional</span></label>
+              <input type="text" id="sClubsNow" name="clubsScoutingNow">
+            </div>
+            <div class="form-group">
+              <label for="sLeagues">League(s) you cover <span class="opt">optional</span></label>
+              <input type="text" id="sLeagues" name="leaguesScouting">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="sClubsPast">Clubs you&rsquo;ve scouted for previously <span class="opt">optional</span></label>
+            <input type="text" id="sClubsPast" name="clubsScoutingPast">
+          </div>
+        </div>
+        <div id="analysisExtra" class="hidden-extra">
+          <label class="group-label">Analyst roles <span class="opt">tick all that apply</span></label>
+          <div class="check-grid "><label class="check-item"><input type="checkbox" name="analysisRoles" value="Head / Director of Performance Analysis"><span>Head / Director of Performance Analysis</span></label><label class="check-item"><input type="checkbox" name="analysisRoles" value="Head of Academy Analysis"><span>Head of Academy Analysis</span></label><label class="check-item"><input type="checkbox" name="analysisRoles" value="1st Team Performance Analyst"><span>1st Team Performance Analyst</span></label><label class="check-item"><input type="checkbox" name="analysisRoles" value="Performance / Tactical Analyst"><span>Performance / Tactical Analyst</span></label><label class="check-item"><input type="checkbox" name="analysisRoles" value="Academy Analyst"><span>Academy Analyst</span></label><label class="check-item"><input type="checkbox" name="analysisRoles" value="Video Analyst"><span>Video Analyst</span></label><label class="check-item"><input type="checkbox" name="analysisRoles" value="Opposition Analyst"><span>Opposition Analyst</span></label><label class="check-item"><input type="checkbox" name="analysisRoles" value="Data Analyst"><span>Data Analyst</span></label><label class="check-item"><input type="checkbox" name="analysisRoles" value="Recruitment Analyst"><span>Recruitment Analyst</span></label></div>
+        </div>
+        <div id="coachingExtra" class="hidden-extra">
+          <label class="group-label">Coaching roles <span class="opt">tick all that apply</span></label>
+          <div class="check-grid "><label class="check-item"><input type="checkbox" name="coachingRoles" value="Head / Director of Coaching"><span>Head / Director of Coaching</span></label><label class="check-item"><input type="checkbox" name="coachingRoles" value="1st Team Head Coach"><span>1st Team Head Coach</span></label><label class="check-item"><input type="checkbox" name="coachingRoles" value="Head Coach"><span>Head Coach</span></label><label class="check-item"><input type="checkbox" name="coachingRoles" value="Assistant Coach"><span>Assistant Coach</span></label><label class="check-item"><input type="checkbox" name="coachingRoles" value="Goalkeeper Coach"><span>Goalkeeper Coach</span></label><label class="check-item"><input type="checkbox" name="coachingRoles" value="Academy Coach"><span>Academy Coach</span></label><label class="check-item"><input type="checkbox" name="coachingRoles" value="Development Centre Coach"><span>Development Centre Coach</span></label><label class="check-item"><input type="checkbox" name="coachingRoles" value="Youth Team Coach"><span>Youth Team Coach</span></label><label class="check-item"><input type="checkbox" name="coachingRoles" value="Performance / S&C Coach"><span>Performance / S&C Coach</span></label></div>
+        </div>
+      </fieldset>
+
+      <fieldset class="fs" id="sec-qual">
+        <legend><span class="legend-num">5</span> Qualifications</legend>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="sScoutQual">Scouting / Talent ID qualifications <span class="opt">optional</span></label>
+            <input type="text" id="sScoutQual" name="scoutingQuals" placeholder="e.g. PFSA TID Level 2, AFCAS Level 3">
+          </div>
+          <div class="form-group">
+            <label for="sCoachQual">Coaching qualifications <span class="opt">optional</span></label>
+            <input type="text" id="sCoachQual" name="coachingQuals" placeholder="e.g. UEFA B, USSF A-Youth, Level 2 Local FA">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="fs" id="sec-gsn">
+        <legend><span class="legend-num">6</span> About GSN <span class="fs-opt">optional</span></legend>
+        <div class="form-group">
+          <label class="group-label">Most important aspects of GSN for you <span class="opt">tick all that apply</span></label>
+          <div class="check-grid "><label class="check-item"><input type="checkbox" name="aspects" value="Networking with professionals"><span>Networking with professionals</span></label><label class="check-item"><input type="checkbox" name="aspects" value="Member directory"><span>Member directory</span></label><label class="check-item"><input type="checkbox" name="aspects" value="Career development & mentoring"><span>Career development & mentoring</span></label><label class="check-item"><input type="checkbox" name="aspects" value="Job board / marketplace"><span>Job board / marketplace</span></label><label class="check-item"><input type="checkbox" name="aspects" value="Trusted information & research"><span>Trusted information & research</span></label><label class="check-item"><input type="checkbox" name="aspects" value="Community discussions"><span>Community discussions</span></label><label class="check-item"><input type="checkbox" name="aspects" value="Events & meet-ups"><span>Events & meet-ups</span></label></div>
+        </div>
+        <p class="opt-questions-intro">If you have used our WhatsApp or Discourse:</p>
+        <div class="form-group">
+          <label for="sEnjoy">What do you enjoy about being a member of GSN?</label>
+          <textarea id="sEnjoy" name="enjoy" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="sImprove">What would you like GSN to be, or do differently?</label>
+          <textarea id="sImprove" name="improve" rows="3"></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset class="fs consent-box" id="sec-consent">
+        <legend><span class="legend-num">7</span> Consent <span class="fs-req">required</span></legend>
+        <label class="check-item consent-item">
+          <input type="checkbox" name="consent" value="Yes" required>
+          <span><strong>I consent to GSN membership.</strong> I agree that my data will be stored securely under UK &amp; EU GDPR on the lawful basis of consent and not shared without further consent; that my name, role, location and professional info may be visible to other verified GSN members; and that I will receive essential community and account messages. I can withdraw consent or request deletion at any time via <a href="mailto:duncan@globalscoutingnetwork.net">duncan@globalscoutingnetwork.net</a>.</span>
+        </label>
+        <label class="check-item consent-item optional">
+          <input type="checkbox" name="consentMarketing" value="Yes">
+          <span><strong>Newsletters <span class="opt">optional</span>.</strong> I&rsquo;d like occasional newsletters and event invitations (opt out any time).</span>
+        </label>
+      </fieldset>
+
+      <div class="form-actions signup-submit">
+        <button type="submit" class="btn btn-primary btn-lg">Submit sign-up</button>
+        <a class="btn btn-ghost" href="index.html">Cancel</a>
+        <p class="fine-print">By submitting this form you acknowledge our <a href="contact.html">data policy</a>. Fields marked <span class="req">*</span> are required.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script>
+  // Show/hide conditional fields when checkboxes are ticked
+  Array.prototype.forEach.call(document.querySelectorAll('[data-toggle]'), function (cb) {
+    cb.addEventListener('change', function () {
+      var t = document.getElementById(cb.getAttribute('data-toggle'));
+      if (t) t.classList.toggle('open', cb.checked);
+    });
+  });
+
+  // Warn users opening this from a local file:// URL — FormSubmit needs http/https
+  if (location.protocol === 'file:') {
+    var w = document.getElementById('localFileWarning');
+    if (w) w.style.display = 'block';
+  }
+
+  // Thank-you banner after redirect from FormSubmit (?sent=1)
+  if (window.location.search.indexOf('sent=1') !== -1) {
+    var s = document.createElement('div');
+    s.className = 'success-banner';
+    s.style.maxWidth = '780px';
+    s.style.margin = '24px auto 0';
+    s.innerHTML = '<strong>Thanks &mdash; your application is in.</strong> We&rsquo;ll review your details and follow up within 2&ndash;3 working days.';
+    var headSection = document.querySelector('.page-head .container');
+    if (headSection) headSection.appendChild(s);
+  }
+</script>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Global Scouting Network</h4>
+        <p style="color:rgba(255,255,255,0.65);font-size:13.5px;max-width:320px;">A vibrant community helping to close gaps in women's football. Future is Female.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="members/">Members</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="signup.html">Sign up</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://gsn.discourse.group/" target="_blank" rel="noopener">Open forum &#8599;</a></li>
+          <li><a href="signup.html">Apply to join</a></li>
+          <li><a href="contact.html">Become a partner</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="contact.html">Contact form</a></li>
+          <li><a href="signup.html">Sign-up form</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Global Scouting Network. All rights reserved.</span>
+      
+    </div>
+  </div>
+</footer>
+</body>
+</html>
