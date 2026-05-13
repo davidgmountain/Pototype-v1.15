@@ -13,8 +13,8 @@
 window.GSN = window.GSN || {};
 
 window.GSN.CONFIG = {
-  SUPABASE_URL:      'https://YOUR-PROJECT.supabase.co',
-  SUPABASE_ANON_KEY: 'YOUR-ANON-PUBLIC-KEY',
+  SUPABASE_URL:      'https://esprxsgwfhqvabirttlq.supabase.co',
+  SUPABASE_ANON_KEY: 'sb_publishable_a4M0V_Tb0JHkgjQbLaOgkQ__EF2XAIg',
   // Where users land after clicking the magic link in their email:
   AUTH_REDIRECT_URL: window.location.origin + '/members/'
 };
