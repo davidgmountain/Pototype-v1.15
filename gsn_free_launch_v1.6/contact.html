@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Global Scouting Network</title>
+  <meta name="description" content="Global Scouting Network is a community for football's talent identification — scouts, coaches, analysts and executives. Future is Female focuses on the women's game.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="Global Scouting Network — Future is Female home">
+      <img src="img/gsn-letters.png" alt="GSN" class="brand-letters">
+      <img src="img/gsn-football.png" alt="" class="brand-football" aria-hidden="true">
+      <span class="brand-fif-stack" aria-hidden="true">
+        <span class="bf-line">Future is</span>
+        <span class="bf-line">Female</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a href="index.html">Home</a>
+      <a href="community.html">Community</a>
+      <a href="team.html">Team</a>
+      <a href="news.html">News</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="members/">Members</a>
+      <a href="signup.html" class="cta">Sign up</a>
+    </nav>
+  </div>
+</header>
+<section class="page-head">
+  <div class="container">
+    <h1>Get in touch</h1>
+    <p class="lede">Whether you&rsquo;re a potential partner, sponsor, investor or have a question &mdash; drop us your details below and we&rsquo;ll come back within a few working days. To apply for membership, please use the <a href="signup.html">sign-up form</a> instead.</p>
+  </div>
+</section>
+
+<div id="localFileWarning" style="display:none; background:#fff8e1; border:1px solid #f3d77b; color:#7a5a14; padding:12px 16px; border-radius:10px; margin: 0 0 20px; font-size:14px; max-width: 1180px; margin-left:auto; margin-right:auto;">
+      <strong>Heads up:</strong> this form posts to a third-party email service that requires the page to be served over <code>https://</code>. If you&rsquo;re viewing this file directly from your computer (a <code>file://</code> URL), submission will fail. <strong>Open the deployed Vercel / Netlify URL instead</strong> and the form will send normally.
+    </div>
+    <section class="s">
+  <div class="container" style="display:grid;grid-template-columns: 1fr 1.4fr;gap:40px;align-items:flex-start;">
+    <div>
+      <h2 style="font-size:20px;">Reach us directly</h2>
+      <p class="muted" style="font-size:14.5px;">For partnership and press enquiries:</p>
+      <p><a href="mailto:duncan@globalscoutingnetwork.net">duncan@globalscoutingnetwork.net</a></p>
+      <p class="muted" style="font-size:14.5px;margin-top:18px;">For the active community right now:</p>
+      <p><a href="https://gsn.discourse.group/" target="_blank" rel="noopener">gsn.discourse.group &#8599;</a></p>
+      <p class="muted" style="font-size:13px;margin-top:30px;">Your details are stored securely. We will never share them with third parties without your consent.</p>
+    </div>
+    <form class="form-card" action="https://formsubmit.co/david@hirsch.org.uk" method="POST">
+      <input type="hidden" name="_subject" value="GSN — Contact form">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="hidden" name="_next" value="https://globalscoutingnetwork.net/contact.html?sent=1">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="form-row">
+        <div><label for="firstName">First name *</label><input id="firstName" name="firstName" type="text" required></div>
+        <div><label for="lastName">Family name *</label><input id="lastName" name="lastName" type="text" required></div>
+      </div>
+      <div class="form-row">
+        <div><label for="email">Email *</label><input id="email" name="email" type="email" required></div>
+        <div><label for="organisation">Organisation</label><input id="organisation" name="organisation" type="text"></div>
+      </div>
+      <div class="form-row full">
+        <div><label for="reason">What&rsquo;s this about? *</label>
+          <select id="reason" name="reason" required>
+            <option value="">&mdash; select &mdash;</option>
+            <option>Partnership / sponsorship enquiry</option>
+            <option>Press / media enquiry</option>
+            <option>Investor enquiry</option>
+            <option>General question</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row full">
+        <div><label for="message">Tell us a bit more *</label>
+          <textarea id="message" name="message" required placeholder="A few sentences please."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg">Send message</button>
+      <p class="form-fineprint">By submitting this form you acknowledge our data policy. Required fields are marked with *.</p>
+    </form>
+  </div>
+</section>
+
+<script>
+  if (location.protocol === 'file:') {
+    var w = document.getElementById('localFileWarning');
+    if (w) w.style.display = 'block';
+  }
+  if (window.location.search.indexOf('sent=1') !== -1) {
+    var s = document.createElement('div');
+    s.className = 'success-banner';
+    s.style.maxWidth = '640px'; s.style.margin = '24px auto 0';
+    s.innerHTML = '<strong>Thanks &mdash; your message is on its way.</strong> We&rsquo;ll be back in touch within a few working days.';
+    var headSection = document.querySelector('.page-head .container');
+    if (headSection) headSection.appendChild(s);
+  }
+</script>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Global Scouting Network</h4>
+        <p style="color:rgba(255,255,255,0.65);font-size:13.5px;max-width:320px;">A vibrant community helping to close gaps in women's football. Future is Female.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="members/">Members</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="signup.html">Sign up</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://gsn.discourse.group/" target="_blank" rel="noopener">Open forum &#8599;</a></li>
+          <li><a href="signup.html">Apply to join</a></li>
+          <li><a href="contact.html">Become a partner</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="contact.html">Contact form</a></li>
+          <li><a href="signup.html">Sign-up form</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Global Scouting Network. All rights reserved.</span>
+      
+    </div>
+  </div>

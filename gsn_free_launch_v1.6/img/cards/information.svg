@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+
+  <defs>
+    <linearGradient id="bg_info" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eef4f6"/>
+      <stop offset="1" stop-color="#bfd2d8"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="white"/>
+      <stop offset="1" stop-color="#f0f0e8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#bg_info)"/>
+  <!-- Book base shadow -->
+  <ellipse cx="400" cy="370" rx="280" ry="14" fill="rgba(0,0,0,0.18)"/>
+  <!-- Open book — left page -->
+  <path d="M150,80 L400,100 L400,330 L150,310 Z" fill="url(#paper)" stroke="#cfd6d2" stroke-width="1"/>
+  <!-- Right page -->
+  <path d="M400,100 L650,80 L650,310 L400,330 Z" fill="url(#paper)" stroke="#cfd6d2" stroke-width="1"/>
+  <!-- Spine/centerline -->
+  <line x1="400" y1="100" x2="400" y2="330" stroke="#9ba3a0" stroke-width="2"/>
+  <!-- Text lines on left page -->
+  <g fill="#4a5558" opacity="0.7">
+    <rect x="170" y="125" width="200" height="4" rx="1"/>
+    <rect x="170" y="142" width="220" height="4" rx="1"/>
+    <rect x="170" y="159" width="180" height="4" rx="1"/>
+    <rect x="170" y="180" width="60" height="4" rx="1" fill="#009DA0"/>
+    <rect x="170" y="198" width="210" height="4" rx="1"/>
+    <rect x="170" y="215" width="190" height="4" rx="1"/>
+    <rect x="170" y="232" width="220" height="4" rx="1"/>
+    <rect x="170" y="249" width="160" height="4" rx="1"/>
+    <rect x="170" y="266" width="200" height="4" rx="1"/>
+  </g>
+  <!-- Text lines on right page -->
+  <g fill="#4a5558" opacity="0.7">
+    <rect x="412" y="125" width="220" height="4" rx="1"/>
+    <rect x="412" y="142" width="180" height="4" rx="1"/>
+    <rect x="412" y="159" width="200" height="4" rx="1"/>
+    <rect x="412" y="180" width="50" height="4" rx="1" fill="#009DA0"/>
+    <rect x="412" y="198" width="220" height="4" rx="1"/>
+    <rect x="412" y="215" width="170" height="4" rx="1"/>
+    <rect x="412" y="232" width="200" height="4" rx="1"/>
+  </g>
+  <!-- Magnifying glass -->
+  <g transform="translate(560,260) rotate(35)">
+    <circle r="55" fill="rgba(255,255,255,0.85)" stroke="#1a2325" stroke-width="6"/>
+    <circle r="55" fill="rgba(0,157,160,0.18)"/>
+    <line x1="38" y1="38" x2="78" y2="78" stroke="#1a2325" stroke-width="10" stroke-linecap="round"/>
+    <line x1="38" y1="38" x2="78" y2="78" stroke="#4a5558" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+</svg>

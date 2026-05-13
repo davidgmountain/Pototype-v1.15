@@ -1,0 +1,49 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+
+  <defs>
+    <radialGradient id="grass" cx="0.5" cy="0.55" r="0.7">
+      <stop offset="0" stop-color="#3d8a4a"/>
+      <stop offset="1" stop-color="#1f4f29"/>
+    </radialGradient>
+    <radialGradient id="ball_shade" cx="0.35" cy="0.3" r="0.7">
+      <stop offset="0" stop-color="white"/>
+      <stop offset="0.85" stop-color="#cccccc"/>
+      <stop offset="1" stop-color="#999999"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#grass)"/>
+  <!-- Faint pitch lines -->
+  <g stroke="rgba(255,255,255,0.15)" stroke-width="2" fill="none">
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <circle cx="400" cy="200" r="120"/>
+    <circle cx="400" cy="200" r="3" fill="rgba(255,255,255,0.4)"/>
+  </g>
+  <!-- Drop shadow -->
+  <ellipse cx="400" cy="320" rx="90" ry="14" fill="rgba(0,0,0,0.3)"/>
+  <!-- Ball body -->
+  <circle cx="400" cy="200" r="110" fill="url(#ball_shade)"/>
+  <!-- Pentagon pattern, traced on the ball surface -->
+  <g fill="#1a2325" stroke="#1a2325" stroke-width="0.5" stroke-linejoin="round">
+    <!-- Central pentagon -->
+    <polygon points="400,150 432,175 420,213 380,213 368,175"/>
+    <!-- Surrounding pentagons (5) -->
+    <polygon points="400,143 408,128 425,130 432,145 422,160"/>
+    <polygon points="450,170 470,168 478,184 462,196 448,182"/>
+    <polygon points="438,232 452,250 442,265 422,260 422,242"/>
+    <polygon points="362,232 378,242 378,260 358,265 348,250"/>
+    <polygon points="350,170 352,160 378,145 392,160 372,184"/>
+  </g>
+  <!-- Connecting lines (hexagon ribs, simplified) -->
+  <g stroke="#1a2325" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M395,143 L400,128"/>
+    <path d="M425,160 L450,150"/>
+    <path d="M462,196 L488,200"/>
+    <path d="M442,255 L455,275"/>
+    <path d="M358,255 L345,275"/>
+    <path d="M348,196 L322,200"/>
+    <path d="M375,150 L368,140"/>
+  </g>
+  <!-- Highlight -->
+  <ellipse cx="370" cy="170" rx="22" ry="12" fill="white" opacity="0.35"/>
+
+</svg>

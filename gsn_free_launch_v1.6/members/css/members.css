@@ -1,0 +1,403 @@
+/* ====================================================================
+ * GSN v1.6 — Members area styles
+ * - Builds on the public /css/style.css
+ * - Adds modal, member cards, directory layout, admin table
+ * ==================================================================== */
+
+/* ---------- Tier / role visibility helpers --------------------- */
+body.gsn-signed-out [data-gsn-require~="member"],
+body.gsn-signed-out [data-gsn-require~="premium"],
+body.gsn-signed-out [data-gsn-require~="admin"] { display: none !important; }
+
+body.gsn-signed-in  [data-gsn-require~="signed-out"] { display: none !important; }
+
+body:not(.gsn-role-admin)   [data-gsn-require~="admin"]   { display: none !important; }
+
+body:not(.gsn-tier-premium):not(.gsn-role-admin) [data-gsn-require~="premium"]      { display: none !important; }
+
+/* "premium-locked" — visible to everyone but greyed for non-premium */
+body:not(.gsn-tier-premium):not(.gsn-role-admin) .premium-locked {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.55;
+  filter: grayscale(40%);
+}
+body:not(.gsn-tier-premium):not(.gsn-role-admin) .premium-locked::after {
+  content: "Premium feature — upgrade to use";
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.78);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  pointer-events: auto;
+  white-space: nowrap;
+  z-index: 2;
+}
+body:not(.gsn-tier-premium):not(.gsn-role-admin) .premium-locked input,
+body:not(.gsn-tier-premium):not(.gsn-role-admin) .premium-locked select,
+body:not(.gsn-tier-premium):not(.gsn-role-admin) .premium-locked button,
+body:not(.gsn-tier-premium):not(.gsn-role-admin) .premium-locked textarea {
+  pointer-events: none;
+}
+
+/* ---------- Login modal --------------------------------------- */
+.gsn-modal-backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 9998;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+.gsn-modal-backdrop.open { display: flex; }
+.gsn-modal {
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+}
+.gsn-modal h3 { margin: 0 0 8px; font-size: 22px; }
+.gsn-modal p  { margin: 0 0 18px; color: #555; font-size: 14px; }
+.gsn-modal input[type=email] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+}
+.gsn-modal button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--teal, #0a7a72);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+}
+.gsn-modal button:disabled { opacity: 0.5; cursor: wait; }
+.gsn-modal .gsn-auth-close {
+  background: none;
+  color: #666;
+  margin-top: 8px;
+  font-weight: 400;
+}
+.gsn-modal .gsn-auth-msg {
+  font-size: 13px;
+  margin-top: 10px;
+  min-height: 18px;
+  color: var(--teal, #0a7a72);
+}
+
+/* ---------- Members-area top strip ----------------------------- */
+.members-strip {
+  background: #f1f5f4;
+  border-bottom: 1px solid #e0e6e5;
+  padding: 10px 0;
+  font-size: 14px;
+}
+.members-strip .container { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.members-strip .who { color: #444; }
+.members-strip .who strong { color: #111; }
+.members-strip .tier-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: 6px;
+}
+.tier-badge.free    { background: #ddd; color: #333; }
+.tier-badge.premium { background: #f5c542; color: #222; }
+.tier-badge.admin   { background: #6b4ce6; color: #fff; }
+
+.members-strip .links a {
+  margin-left: 14px;
+  color: #0a7a72;
+  text-decoration: none;
+  font-weight: 600;
+}
+.members-strip .links a.active { text-decoration: underline; }
+.members-strip .links a.signout { color: #666; }
+
+/* ---------- Directory page ------------------------------------ */
+.dir-search {
+  background: #fff;
+  border: 1px solid #e3e7e6;
+  border-radius: 12px;
+  padding: 22px;
+  margin: 20px 0 28px;
+}
+.dir-search h3 { margin: 0 0 12px; font-size: 18px; }
+.dir-search .basic-row,
+.dir-search .premium-grid { display: grid; gap: 12px; }
+.dir-search .basic-row    { grid-template-columns: 2fr 1fr auto; }
+.dir-search .premium-grid { grid-template-columns: repeat(3, 1fr); margin-top: 14px; }
+.dir-search input,
+.dir-search select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.dir-search button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: var(--teal, #0a7a72);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.dir-search .premium-banner {
+  margin-top: 14px;
+  font-size: 13px;
+  padding: 10px 14px;
+  background: #fff8e0;
+  border: 1px solid #f5c542;
+  border-radius: 8px;
+  color: #5a4500;
+}
+.dir-search .premium-banner a { color: #0a7a72; font-weight: 600; }
+
+@media (max-width: 700px) {
+  .dir-search .basic-row    { grid-template-columns: 1fr; }
+  .dir-search .premium-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Member cards -------------------------------------- */
+.dir-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+.member-card {
+  background: #fff;
+  border: 1px solid #e3e7e6;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.15s;
+}
+.member-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.06); }
+.member-card .avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #e0e6e5;
+  color: #0a7a72;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+}
+.member-card .meta strong { display: block; font-size: 15px; margin-bottom: 2px; color: #111; }
+.member-card .meta .role  { font-size: 13px; color: #555; }
+.member-card .meta .club  { font-size: 12px; color: #777; margin-top: 4px; }
+.member-card .meta .country { font-size: 12px; color: #888; margin-top: 2px; }
+.member-card .meta .tags { margin-top: 6px; display: flex; gap: 4px; flex-wrap: wrap; }
+.member-card .meta .tags span { font-size: 11px; padding: 2px 6px; background: #eaf2f1; color: #0a7a72; border-radius: 4px; }
+
+.dir-empty { padding: 40px; text-align: center; color: #777; }
+.dir-loading { padding: 40px; text-align: center; color: #777; }
+
+/* ---------- Profile page -------------------------------------- */
+.profile-hero {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+.profile-hero .avatar-lg {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: #e0e6e5;
+  color: #0a7a72;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800;
+  font-size: 40px;
+  flex-shrink: 0;
+  background-size: cover; background-position: center;
+}
+.profile-hero h1 { margin: 0 0 6px; }
+.profile-hero .role { font-size: 16px; color: #555; }
+.profile-hero .country { font-size: 14px; color: #777; margin-top: 4px; }
+.profile-hero .tier-badge { vertical-align: middle; }
+
+.profile-section { margin-top: 28px; }
+.profile-section h2 { font-size: 18px; margin: 0 0 8px; }
+.profile-section p { color: #444; line-height: 1.55; }
+
+.profile-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; }
+.profile-tags span { font-size: 12px; padding: 4px 10px; background: #eaf2f1; color: #0a7a72; border-radius: 12px; }
+
+.dm-card {
+  background: #fff;
+  border: 1px solid #e3e7e6;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 24px;
+}
+.dm-card h3 { margin: 0 0 8px; }
+.dm-card textarea {
+  width: 100%; box-sizing: border-box;
+  min-height: 100px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.dm-card button {
+  padding: 10px 18px;
+  border: none; border-radius: 8px;
+  background: var(--teal, #0a7a72);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.dm-card .dm-status { font-size: 13px; margin-left: 12px; color: var(--teal, #0a7a72); }
+
+/* ---------- Edit-own-profile form ----------------------------- */
+.profile-form {
+  display: grid;
+  gap: 16px;
+  max-width: 640px;
+}
+.profile-form label { display: block; font-weight: 600; font-size: 14px; margin-bottom: 6px; }
+.profile-form input,
+.profile-form select,
+.profile-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+}
+.profile-form textarea { min-height: 100px; resize: vertical; }
+.profile-form .actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.profile-form button {
+  padding: 10px 22px;
+  border: none; border-radius: 8px;
+  background: var(--teal, #0a7a72);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+.profile-form .save-status { font-size: 13px; color: var(--teal, #0a7a72); }
+
+/* ---------- Messages inbox ------------------------------------ */
+.msg-list { display: flex; flex-direction: column; gap: 12px; }
+.msg {
+  background: #fff;
+  border: 1px solid #e3e7e6;
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.msg.unread { border-left: 4px solid var(--teal, #0a7a72); background: #f8fbfb; }
+.msg .from { font-weight: 700; font-size: 14px; }
+.msg .when { color: #999; font-size: 12px; }
+.msg .body { margin-top: 8px; color: #333; line-height: 1.5; white-space: pre-wrap; }
+
+/* ---------- Admin dashboard table ----------------------------- */
+.admin-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e3e7e6; border-radius: 12px; overflow: hidden; }
+.admin-table th, .admin-table td { padding: 10px 12px; text-align: left; font-size: 14px; border-bottom: 1px solid #eaeded; }
+.admin-table th { background: #f5f8f7; font-weight: 700; }
+.admin-table tr:last-child td { border-bottom: none; }
+.admin-table select { padding: 4px 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 13px; }
+.admin-table button { padding: 5px 10px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12px; }
+.admin-table .btn-approve { background: #20a472; color: #fff; }
+.admin-table .btn-deny    { background: #c33;    color: #fff; }
+
+.admin-requests {
+  margin-bottom: 24px;
+  background: #fff8e0;
+  border: 1px solid #f5c542;
+  border-radius: 12px;
+  padding: 18px;
+}
+.admin-requests h2 { margin: 0 0 12px; font-size: 18px; }
+
+/* ---------- Upgrade / sign-in landing ------------------------- */
+.gate-card {
+  background: #fff;
+  border: 1px solid #e3e7e6;
+  border-radius: 14px;
+  padding: 36px;
+  max-width: 520px;
+  margin: 48px auto;
+  text-align: center;
+}
+.gate-card h1 { font-size: 24px; margin-bottom: 10px; }
+.gate-card p  { color: #555; margin-bottom: 20px; }
+.gate-card button {
+  padding: 12px 24px;
+  border: none; border-radius: 8px;
+  background: var(--teal, #0a7a72);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.upgrade-box {
+  background: linear-gradient(135deg, #fff8e0, #fff);
+  border: 2px solid #f5c542;
+  border-radius: 14px;
+  padding: 28px;
+  margin: 24px 0;
+}
+.upgrade-box h2 { margin: 0 0 8px; color: #5a4500; }
+.upgrade-box ul { color: #444; margin: 12px 0 16px; padding-left: 20px; }
+.upgrade-box ul li { margin-bottom: 4px; }
+.upgrade-box textarea {
+  width: 100%; box-sizing: border-box;
+  min-height: 90px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  margin-bottom: 12px;
+}
+.upgrade-box button {
+  padding: 12px 24px;
+  border: none; border-radius: 8px;
+  background: #f5c542;
+  color: #222;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.notice {
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin: 16px 0;
+}
+.notice.success { background: #e0f5ee; color: #1e6b51; border: 1px solid #b8e3d0; }
+.notice.info    { background: #eaf2f6; color: #2b4a5e; border: 1px solid #c4d7e2; }
+.notice.warn    { background: #fff5e0; color: #7a4f00; border: 1px solid #f5d077; }

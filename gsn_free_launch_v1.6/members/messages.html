@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Messages — Global Scouting Network</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/members.css">
+</head>
+<body class="gsn-signed-out">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="Global Scouting Network — Future is Female home">
+      <img src="../img/gsn-letters.png" alt="GSN" class="brand-letters">
+      <img src="../img/gsn-football.png" alt="" class="brand-football" aria-hidden="true">
+      <span class="brand-fif-stack" aria-hidden="true">
+        <span class="bf-line">Future is</span>
+        <span class="bf-line">Female</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a href="../index.html">Home</a>
+      <a href="../community.html">Community</a>
+      <a href="../team.html">Team</a>
+      <a href="../news.html">News</a>
+      <a href="../contact.html">Contact</a>
+      <a href="index.html" class="active">Members</a>
+      <a href="../signup.html" class="cta">Sign up</a>
+    </nav>
+  </div>
+</header>
+
+<div class="members-strip" data-gsn-require="member">
+  <div class="container">
+    <div class="who">Signed in as <strong id="gsn-who">…</strong> <span id="gsn-tier-badge" class="tier-badge free">FREE</span></div>
+    <div class="links">
+      <a href="index.html">Directory</a>
+      <a href="me.html">My profile</a>
+      <a href="messages.html" class="active" data-gsn-require="premium">Messages</a>
+      <a href="upgrade.html">Upgrade</a>
+      <a href="admin.html" data-gsn-require="admin">Admin</a>
+      <a href="#" class="signout js-signout">Sign out</a>
+    </div>
+  </div>
+</div>
+
+<section class="s" data-gsn-require="signed-out">
+  <div class="container">
+    <div class="gate-card">
+      <h1>Sign in to read messages</h1>
+      <button class="js-signin" type="button">Sign in to GSN</button>
+    </div>
+  </div>
+</section>
+
+<!-- Free-tier users get an upgrade prompt instead of the inbox -->
+<section class="s" data-gsn-require="member">
+  <div class="container" id="msg-root">
+    <p>Loading…</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom"><span>&copy; 2026 Global Scouting Network. All rights reserved.</span></div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/messages.js"></script>
+</body>
+</html>

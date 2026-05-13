@@ -1,0 +1,38 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fad0a8"/>
+      <stop offset="0.5" stop-color="#fab97e"/>
+      <stop offset="1" stop-color="#fa915c"/>
+    </linearGradient>
+    <linearGradient id="mtn1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#005158"/>
+      <stop offset="1" stop-color="#003c40"/>
+    </linearGradient>
+    <linearGradient id="mtn2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00777a"/>
+      <stop offset="1" stop-color="#005158"/>
+    </linearGradient>
+    <linearGradient id="mtn3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#009DA0"/>
+      <stop offset="1" stop-color="#00777a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#sky)"/>
+  <!-- Sun -->
+  <circle cx="540" cy="170" r="58" fill="white" opacity="0.95"/>
+  <circle cx="540" cy="170" r="80" fill="white" opacity="0.25"/>
+  <circle cx="540" cy="170" r="115" fill="white" opacity="0.10"/>
+  <!-- Distant mountains -->
+  <polygon points="0,290 110,180 200,250 320,160 430,260 580,150 700,240 800,210 800,400 0,400" fill="url(#mtn1)"/>
+  <!-- Mid mountains -->
+  <polygon points="0,330 80,260 180,310 280,220 380,300 500,210 620,300 720,260 800,290 800,400 0,400" fill="url(#mtn2)"/>
+  <!-- Foreground peaks -->
+  <polygon points="0,400 0,360 100,310 220,350 340,290 460,340 580,300 720,350 800,330 800,400" fill="url(#mtn3)"/>
+  <!-- Tiny climber/flag on highest mid peak (around 500,210) -->
+  <line x1="497" y1="210" x2="497" y2="195" stroke="white" stroke-width="2"/>
+  <polygon points="497,195 510,200 497,205" fill="white"/>
+  <circle cx="500" cy="218" r="3" fill="white"/>
+
+</svg>

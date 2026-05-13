@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Member directory — Global Scouting Network</title>
+  <meta name="description" content="Search the Global Scouting Network member directory.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/members.css">
+</head>
+<body class="gsn-signed-out">
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="Global Scouting Network — Future is Female home">
+      <img src="../img/gsn-letters.png" alt="GSN" class="brand-letters">
+      <img src="../img/gsn-football.png" alt="" class="brand-football" aria-hidden="true">
+      <span class="brand-fif-stack" aria-hidden="true">
+        <span class="bf-line">Future is</span>
+        <span class="bf-line">Female</span>
+      </span>
+    </a>
+    <nav class="nav-main">
+      <a href="../index.html">Home</a>
+      <a href="../community.html">Community</a>
+      <a href="../team.html">Team</a>
+      <a href="../news.html">News</a>
+      <a href="../contact.html">Contact</a>
+      <a href="index.html" class="active">Members</a>
+      <a href="../signup.html" class="cta">Sign up</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Signed-in members strip -->
+<div class="members-strip" data-gsn-require="member">
+  <div class="container">
+    <div class="who">Signed in as <strong id="gsn-who">…</strong> <span id="gsn-tier-badge" class="tier-badge free">FREE</span></div>
+    <div class="links">
+      <a href="index.html" class="active">Directory</a>
+      <a href="me.html">My profile</a>
+      <a href="messages.html" data-gsn-require="premium">Messages</a>
+      <a href="upgrade.html">Upgrade</a>
+      <a href="admin.html" data-gsn-require="admin">Admin</a>
+      <a href="#" class="signout js-signout">Sign out</a>
+    </div>
+  </div>
+</div>
+
+<!-- Signed-out gate -->
+<section class="s" data-gsn-require="signed-out">
+  <div class="container">
+    <div class="gate-card">
+      <h1>Members area</h1>
+      <p>Sign in with your email to access the GSN member directory. We'll send you a one-click magic link — no password to remember.</p>
+      <button class="js-signin" type="button">Sign in to GSN</button>
+      <p style="margin-top:18px;font-size:13px;">Not a member yet? <a href="../signup.html">Apply for a free account →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- Signed-in: directory -->
+<section class="s" data-gsn-require="member">
+  <div class="container">
+    <h1>Member directory</h1>
+    <p class="lede">Find scouts, coaches, analysts and executives across the network.</p>
+
+    <!-- Premium upsell banner (only shown to free members) -->
+    <div class="upgrade-box" data-gsn-require="member" id="dir-upsell" style="display:none">
+      <h2>Unlock the premium search</h2>
+      <p>You're on the free tier. Free search lets you find people by name or country. Upgrade to premium to filter by role, club and expertise, and to message any member directly.</p>
+      <a href="upgrade.html" class="btn btn-primary" style="display:inline-block;text-decoration:none;background:#f5c542;color:#222;padding:10px 22px;border-radius:8px;font-weight:700;">Upgrade to premium →</a>
+    </div>
+
+    <div class="dir-search">
+      <h3>Search</h3>
+      <!-- BASIC SEARCH: available to all signed-in members -->
+      <div class="basic-row">
+        <input type="text" id="dir-name"    placeholder="Name (e.g. Sigrid)">
+        <input type="text" id="dir-country" placeholder="Country (e.g. Italy)">
+        <button id="dir-search-btn" type="button">Search</button>
+      </div>
+
+      <!-- PREMIUM SEARCH: visible to everyone; disabled/greyed for free -->
+      <div class="premium-locked">
+        <div class="premium-grid">
+          <input type="text" id="dir-role"      placeholder="Role / title (e.g. Scout, Analyst)">
+          <input type="text" id="dir-club"      placeholder="Club / organisation">
+          <select id="dir-expertise">
+            <option value="">Expertise (any)</option>
+            <option>scouting</option>
+            <option>analytics</option>
+            <option>coaching</option>
+            <option>youth development</option>
+            <option>player welfare</option>
+            <option>strength &amp; conditioning</option>
+            <option>media &amp; broadcast</option>
+            <option>governance</option>
+            <option>commercial</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div id="dir-results" class="dir-results">
+      <div class="dir-loading">Loading members…</div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Global Scouting Network</h4>
+        <p style="color:rgba(255,255,255,0.65);font-size:13.5px;max-width:320px;">A vibrant community helping to close gaps in women's football. Future is Female.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../community.html">Community</a></li>
+          <li><a href="../team.html">Team</a></li>
+          <li><a href="../news.html">News</a></li>
+          <li><a href="index.html">Members</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+          <li><a href="../signup.html">Sign up</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://gsn.discourse.group/" target="_blank" rel="noopener">Open forum &#8599;</a></li>
+          <li><a href="../signup.html">Apply to join</a></li>
+          <li><a href="../contact.html">Become a partner</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="../contact.html">Contact form</a></li>
+          <li><a href="../signup.html">Sign-up form</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Global Scouting Network. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/directory.js"></script>
+</body>
+</html>
